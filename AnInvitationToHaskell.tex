@@ -2,7 +2,7 @@
 
 
 \usepackage{minted}
-\usepackage[parfill]{parskip}    		
+%\usepackage[parfill]{parskip}    		
 \usepackage{graphicx}				
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -46,6 +46,7 @@
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 \newcommand{\mblue}[1]{\textcolor{blue}{$#1$}}
 
+% \newcommand{\haskell}[1]{\begin{minted}{haskell}#1\end{minted}}
 
 \setbeamertemplate{navigation symbols}{\insertframenumber{}}
 \colorlet{shadecolor}{gray!15}
@@ -207,7 +208,7 @@ So what is Functional Programming?
 	\end{itemize}
 }
 
-\frame{
+\frame{\newcommand{\haskell}[1]{\begin{minted}{haskell}#1\end{minted}}
 	Famously, Haskell has a type system.
 	
 	\begin{itemize}
@@ -296,6 +297,21 @@ So what is Functional Programming?
 
 \section{Examples}
 
+\subsection{Syntax}
+
+\frame{ 
+	In haskell, we write the definition for functions and constants like this:
+}
+
+\begin{frame}[fragile] 
+In haskell, we write the definition for functions and constants like this:
+
+	\begin{minted} 
+		-- the square function
+		f :: Int -> Int 
+		f input = input * input
+	\end{minted}
+\end{frame}
 \subsection{Basics}
 \subsection{Folds}
 \subsection{Algorithms}

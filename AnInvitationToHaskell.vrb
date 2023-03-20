@@ -1,0 +1,7 @@
+In haskell, we write the definition for functions and constants like this:
+
+	\begin{minted}
+		-- the square function
+		f :: Int -> Int
+		f input = input * input
+	\end{minted}
