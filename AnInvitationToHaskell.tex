@@ -1,0 +1,306 @@
+\documentclass[tikz]{beamer}
+
+
+\usepackage{minted}
+\usepackage[parfill]{parskip}    		
+\usepackage{graphicx}				
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{tikz-cd}
+\usepackage{enumerate}
+\usepackage{xfrac}
+\usepackage{hyperref}
+\usepackage{graphicx} \graphicspath{ {./} }
+\usepackage{xcolor}
+\usepackage{bbold}
+
+
+\newcommand{\cat}[1]{\bm{ \mathsf{#1} }}
+\newcommand{\functor}[3]{#1 : \cat{#2} \to \cat{#3}}
+\newcommand{\functordef}{\functor{F}{C}{D}}
+\newcommand{\cc}{\cat{C}}
+\newcommand{\dd}{\cat{D}}
+\newcommand{\ee}{\cat{E}}
+\newcommand{\subcat}[2]{\bm{ \mathsf{#1}}_{\bm{ \mathsf{#2}}}}
+\newcommand{\op}[1]{#1^{\text{op}}}
+\newcommand{\opc}{\op{\cc}}
+\newcommand{\opd}{\op{\dd}}
+\newcommand{\ope}{\op{\ee}}
+\newcommand{\mono}{\rightarrowtail}
+\newcommand{\epi}{\twoheadrightarrow}
+\newcommand{\zero}{\bm{\mathbb{0}}}
+\newcommand{\one}{\bm{\mathbb{1}}}
+\newcommand{\two}{\bm{\mathbb{2}}}
+\newcommand{\three}{\bm{\mathbb{3}}}
+\newcommand{\bg}{\cat{BG}}
+\newcommand{\bgg}{\cat{BG'}}
+\newcommand{\nt}{\Rightarrow}
+\newcommand{\ant}[2]{\alpha : F \nt G} 
+\newcommand{\bnt}[2]{\beta : F \nt G} 
+\newcommand{\anti}[2]{\alpha : F \cong G} 
+\newcommand{\bnti}[2]{\beta : F \cong G} 
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\mred}[1]{\textcolor{red}{$#1$}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\mblue}[1]{\textcolor{blue}{$#1$}}
+
+
+\setbeamertemplate{navigation symbols}{\insertframenumber{}}
+\colorlet{shadecolor}{gray!15}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\newcommand{\propnumber}{} % initialize
+\newtheorem*{prop}{Proposition \propnumber}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+
+\AtBeginSection[]{
+  \begin{frame}
+        \frametitle{Table of Contents}
+        \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+    \begin{frame}
+        \frametitle{Table of Contents}
+        \tableofcontents[currentsection,currentsubsection]
+    \end{frame}
+}
+
+\title{An Invitation to Haskell}
+\author{Emily Pillmore}
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+% \frame{\tableofcontents[hideallsubsections]}
+ 
+\section{Introduction}
+
+\frame
+{
+	My name is Emily Pillmore.
+	
+	I am a programmer, and a math enthusiast. 
+}
+
+\frame
+{
+	\begin{itemize}
+		\item Author/Maintainer of more than 30 packages, some bigger than others
+		\item Served on the Haskell Core Libraries and .Org committees
+		\item Twitter (\blue{\href{https://twitter.com/yandereidiot}{@yandereidiot}})
+		\item Meetups in NYC: NY Homotopy Type Theory, NY Category Theory, and the NY Haskell User Group. 
+		\item All of my slides, general scribbles, research, and meetup content are hosted at \blue{\href{https://github.com/cohomolo-gy}{cohomolo.gy}}.
+	\end{itemize}
+	
+	
+	If you ever want to talk math or programming, I'm around.
+}
+
+\frame
+{
+	\begin{center}
+		I helped start the \blue{\href{https://haskell.foundation}{Haskell Foundation}} and served on the executive leadership team as a duo (CTO) with Andrew Boardman (ED).  \\
+		\includegraphics[scale=0.3]{haskell-foundation}
+	\end{center}
+}
+
+\frame
+{ 
+
+	\begin{center}
+	I now work at a company called \textbf{Kadena}, as the lead of the language, its ecosystem, and its execution layers. \\
+		\includegraphics[scale=0.3]{kadena}
+	\end{center}
+	
+}
+
+\section{Functional Programming}
+
+\frame {
+So what is Functional Programming? 
+
+}
+
+\frame {
+So what is Functional Programming? 
+
+\begin{center}
+	\begin{itemize}
+		\item A collection of features? (lambdas, first class HOF's, static type system...)
+	\end{itemize}
+\end{center}
+
+}
+
+\frame {
+So what is Functional Programming? 
+
+\begin{center}
+	\begin{itemize}
+		\item A collection of features? (lambdas, first class HOF's, static type system...)
+		\item A programming style? (emphasis on recursion, "math", small static combinators, shunting as many errors to the compiler as possible)
+	\end{itemize}
+\end{center}
+
+}
+
+\frame {
+So what is Functional Programming? 
+
+\begin{center}
+	\begin{itemize}
+		\item A collection of features? (lambdas, first class HOF's, static type system...)
+		\item A programming style? (emphasis on recursion, "math", small static combinators, shunting as many errors to the compiler as possible)
+		\item A cult?
+	\end{itemize}
+\end{center}
+
+}
+
+\subsection{Foundations}
+\frame{
+	In 1977, John Backus wrote \blue{\href{http://worrydream.com/refs/Backus-CanProgrammingBeLiberated.pdf}{everything we needed to know about FP}}. 
+}
+
+\frame{
+	Compositionality! Equational Reasoning! Sound foundational principles!
+}
+
+\subsection{Purity}
+
+\frame{
+	Haskell builds a equational foundation on \red{purity}.
+}
+
+\frame{
+	This means that functions may not have \textit{side effects}. In conjunction with not allows side effects anywhere, this allows expressions to be completely deterministic, and therefore \textit{referentially transparent}.
+}
+
+\subsection{Types}
+
+\frame{
+	Famously, Haskell has a type system.
+}
+
+\frame{
+	Famously, Haskell has a type system.
+	
+	\begin{itemize}
+		\item It has functions (read: function definitions, lambdas)
+	\end{itemize}
+}
+
+\frame{
+	Famously, Haskell has a type system.
+	
+	\begin{itemize}
+		\item It has functions (read: function definitions, lambdas)
+		\item It has builtins (integers, IEEE floating points, machine words, characters etc.)
+	\end{itemize}
+}
+
+\frame{
+	Famously, Haskell has a type system.
+	
+	\begin{itemize}
+		\item It has functions (read: function definitions, lambdas)
+		\item It has builtins (integers, IEEE floating points, machine words, characters etc.)
+		\item It has generics
+	\end{itemize}
+}
+
+\frame{
+	Haskell has a global notion of parametricity everywhere you want it which may be reasoned about equationally, and therefore free theorems you can reason about.
+}
+
+\frame{
+	It has a form of ad-hoc polymorphism for generics called "Typeclasses".
+}
+
+\frame{
+	For more, see: 
+	
+		\begin{itemize}
+			\item Wadler - \blue{\href{https://dl.acm.org/doi/pdf/10.1145/99370.99404}{Theorems for Free}}
+			\item My talk - \blue{\href{https://github.com/cohomolo-gy/Type-Arithmetic-and-the-Yoneda-Perspective/blob/master/typearithmeticyl.pdf}{Type Arithmetic}}
+		\end{itemize}
+}
+
+\subsection{Consequences}
+	
+\frame{
+	Since purity undermines destructive updates, our Haskell data structures are immutable. This creates some issues.
+	
+}
+
+\frame{
+	Since purity undermines destructive updates, our Haskell data structures are immutable. This creates some issues.
+	
+	\begin{itemize}
+		\item The amortized complexity theory needed to talk about the best/average/worst case of operations goes out the window (your average case becomes your worst case for many operations). 
+	\end{itemize}
+	
+}
+
+\frame{
+	Since purity undermines destructive updates, our Haskell data structures are immutable. This creates some issues.
+	
+	\begin{itemize}
+		\item The amortized analysis (cheap small steps paying off a more expensive larger step) needed to talk about the best/average/worst case of operations goes out the window (your amortized cost becomes your worst case for many operations). 
+		\item Laziness (a limited form of mutation) turns out to be enough to recover amortized analysis 
+	\end{itemize}
+	
+}
+
+\frame{
+	Since purity undermines destructive updates, our Haskell data structures are immutable. This creates some issues.
+	
+	\begin{itemize}
+		\item The amortized analysis (cheap small steps paying off a more expensive larger step) needed to talk about the best/average/worst case of operations goes out the window (your amortized cost becomes your worst case for many operations). 
+		\item Laziness (a limited form of mutation) turns out to be enough to recover amortized analysis.
+		\item This requires a different take on analysis (thunk counting techniques etc.) which causes you to think in a whole new paradigm. 
+	\end{itemize}
+	
+}
+
+\frame{
+	Since purity undermines destructive updates, our Haskell data structures are immutable. This creates some issues.
+	
+	\begin{itemize}
+		\item The amortized analysis (cheap small steps paying off a more expensive larger step) needed to talk about the best/average/worst case of operations goes out the window (your amortized cost becomes your worst case for many operations). 
+		\item Laziness (a limited form of mutation) turns out to be enough to recover amortized analysis.
+		\item This requires a different take on analysis (thunk counting techniques etc.) which causes some tension.
+	\end{itemize}
+	
+}
+
+\frame{
+	Immutability + Laziness, though, is a super power. \blue{\href{https://legacy.cs.indiana.edu/ftp/techreports/TR44.pdf}{Friedman-Wise}} posed an important question back in 1976.
+}
+
+\frame{
+	Inherently easy to spread about on multiple cores. With commutative, associative, and unital (see: commutative monoidal) functions, map-reduce is possible. 
+}
+
+\frame{
+	It also makes scheduling parallelism and concurrency a simpler. 
+}
+
+\section{Examples}
+
+\subsection{Basics}
+\subsection{Folds}
+\subsection{Algorithms}
+\subsection{Concurrency}
+
+\section{Conclusion}
+
+\end{document}

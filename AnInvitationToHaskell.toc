@@ -1,0 +1,13 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Functional Programming}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{Foundations}{12}{0}{2}
+\beamer@subsectionintoc {2}{2}{Purity}{15}{0}{2}
+\beamer@subsectionintoc {2}{3}{Types}{18}{0}{2}
+\beamer@subsectionintoc {2}{4}{Consequences}{26}{0}{2}
+\beamer@sectionintoc {3}{Examples}{35}{0}{3}
+\beamer@subsectionintoc {3}{1}{Basics}{36}{0}{3}
+\beamer@subsectionintoc {3}{2}{Folds}{37}{0}{3}
+\beamer@subsectionintoc {3}{3}{Algorithms}{38}{0}{3}
+\beamer@subsectionintoc {3}{4}{Concurrency}{39}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{40}{0}{4}
