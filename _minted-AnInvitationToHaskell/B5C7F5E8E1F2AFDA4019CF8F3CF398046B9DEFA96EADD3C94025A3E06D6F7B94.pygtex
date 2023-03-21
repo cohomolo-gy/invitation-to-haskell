@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{n}{sum}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{Int}\PYG{p}{]}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{k+kt}{Int}
+\PYG{+w}{	}\PYG{n}{sum}\PYG{+w}{ }\PYG{n}{lst}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{reduce}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{+}\PYG{p}{)}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{n}{lst}
+\PYG{+w}{		}
+\PYG{+w}{	}\PYG{n}{product}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{Int}\PYG{p}{]}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{k+kt}{Int}
+\PYG{+w}{	}\PYG{n}{product}\PYG{+w}{ }\PYG{n}{lst}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{reduce}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{*}\PYG{p}{)}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{n}{lst}
+\PYG{+w}{		}
+\PYG{+w}{	}\PYG{n}{filter}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{a}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{k+kt}{Bool}\PYG{p}{)}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{a}\PYG{p}{]}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{a}\PYG{p}{]}
+\PYG{+w}{	}\PYG{n}{filter}\PYG{+w}{ }\PYG{n}{p}\PYG{+w}{ }\PYG{n}{lst}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{reduce}
+\PYG{+w}{	  }\PYG{p}{(}\PYG{n+nf}{\PYGZbs{}}\PYG{n}{a}\PYG{+w}{ }\PYG{n}{acc}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{k+kr}{if}\PYG{+w}{ }\PYG{n}{p}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{k+kr}{then}\PYG{+w}{ }\PYG{n}{a}\PYG{k+kt}{:}\PYG{n}{acc}\PYG{+w}{ }\PYG{k+kr}{else}\PYG{+w}{ }\PYG{n}{acc}\PYG{p}{)}
+\PYG{+w}{	  }\PYG{k+kt}{[]}\PYG{+w}{ }\PYG{n}{lst}
+\PYG{+w}{		}
+\PYG{+w}{	}\PYG{n}{map}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{a}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{)}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{a}\PYG{p}{]}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{b}\PYG{p}{]}
+\PYG{+w}{	}\PYG{n}{map}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{n}{lst}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{reduce}
+\PYG{+w}{	 }\PYG{p}{(}\PYG{n+nf}{\PYGZbs{}}\PYG{n}{a}\PYG{+w}{ }\PYG{n}{acc}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{f}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{)}\PYG{k+kt}{:}\PYG{n}{acc}\PYG{p}{)}\PYG{+w}{ }\PYG{k+kt}{[]}\PYG{+w}{ }\PYG{n}{lst}
+\end{Verbatim}

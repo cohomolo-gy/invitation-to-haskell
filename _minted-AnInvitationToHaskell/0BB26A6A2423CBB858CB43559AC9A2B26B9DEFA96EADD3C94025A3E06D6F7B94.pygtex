@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{		}\PYG{n}{reduce}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{+}\PYG{p}{)}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{]}
+\PYG{+w}{		}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} \PYGZti{} reduce (+) 0 (1:(2:(3:[])))}
+\PYG{+w}{		}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} \PYGZti{} 1 + reduce (+) 0 (2:(3:[]))}
+\PYG{+w}{		}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} \PYGZti{} 1 + (2 + (reduce (+) 0 (3:[])))}
+\PYG{+w}{		}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} \PYGZti{} 1 + (2 + (3 + reduce (+) 0 []))}
+\PYG{+w}{		}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} \PYGZti{} 1 + (2 + (3 + 0))}
+\PYG{+w}{		}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} \PYGZti{} 1 + (2 + 3)}
+\PYG{+w}{		}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} \PYGZti{} 1 + 5}
+\PYG{+w}{		}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} \PYGZti{} 6}
+\end{Verbatim}

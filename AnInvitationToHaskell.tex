@@ -502,41 +502,63 @@ As mentioned in the beginning of the talk, immutable data structures let us achi
 
 \frame { 
 	\textit{reduce} is commonly referred to as a "fold". In fact, 
-	it's a \textit{"right fold"} in the sense that the values are accumulated thusly: $reduce (+) 0 [1,2,3] ~ 1 + (2 + (3 + 0))$
+	it's a \textit{"right fold"} in the sense that the values are accumulated thusly: 
 }
 
+\begin{frame}[fragile] 
+	\textit{reduce} is commonly referred to as a "fold". In fact, 
+	it's a \textit{"right fold"} in the sense that the values are accumulated thusly:
+	
+	\begin{center}
+		\begin{minted}{haskell}
+		reduce (+) 0 [1,2,3]
+		-- ~ reduce (+) 0 (1:(2:(3:[])))
+		-- ~ 1 + reduce (+) 0 (2:(3:[]))
+		-- ~ 1 + (2 + (reduce (+) 0 (3:[])))
+		-- ~ 1 + (2 + (3 + reduce (+) 0 []))
+		-- ~ 1 + (2 + (3 + 0))
+		-- ~ 1 + (2 + 3)
+		-- ~ 1 + 5
+		-- ~ 6
+		\end{minted}
+	\end{center}
+\end{frame}
+
+
 \frame { 
-	Claim: this function corresponds with a kind of "canonical way to reduce a list". As a result, one may define many interesting properties of a list in terms of this formulation. 
+	Claim: this function corresponds with a kind of "canonical way to reduce a list recursively". As a result, one may define many interesting properties of a list in terms of this formulation. 
 }
 
 \begin{frame}[fragile]
 	\begin{center}
 		\begin{minted}{haskell}
-		sum :: [Int] -> Int
-		sum lst = reduce (+) 0 lst 
+	sum :: [Int] -> Int
+	sum lst = reduce (+) 0 lst 
 		
-		product :: [Int] -> Int
-		product lst = reduce (*) 1 lst
+	product :: [Int] -> Int
+	product lst = reduce (*) 1 lst
 		
-		filter :: (a -> Bool) -> [a] -> [a]
-		filter p lst = reduce 
-		  (\a acc -> if p a then a:acc else acc) [] lst
+	filter :: (a -> Bool) -> [a] -> [a]
+	filter p lst = reduce 
+	  (\a acc -> if p a then a:acc else acc)
+	  [] lst
 		
-		map :: (a -> b) -> [a] -> [b]
-		map f lst = reduce (\a acc -> (f a):acc) [] lst
-		\end{minted}
+	map :: (a -> b) -> [a] -> [b]
+	map f lst = reduce
+	 (\a acc -> (f a):acc) [] lst
+	\end{minted}
 	\end{center}
 \end{frame}
 
 \begin{frame}[fragile]
 	\begin{center}
 		\begin{minted}{haskell}
-		-- data Bool = True | False
-		all :: [Bool] -> Bool
-		all bs = reduce (&&) True bs
+	-- data Bool = True | False
+	all :: [Bool] -> Bool
+	all bs = reduce (&&) True bs
 		
-		any :: [Bool] -> Bool
-		any bs = reduce (||) False bs
+	any :: [Bool] -> Bool
+	any bs = reduce (||) False bs
 		\end{minted}
 	\end{center}
 \end{frame}
@@ -603,6 +625,21 @@ As mentioned in the beginning of the talk, immutable data structures let us achi
 
 
 \section{Building Stuff}
+
+\subsection{Ghcup}
+
+\frame{
+	You can get everything you need from a tool called "ghcup".
+}
+
+\frame{
+	GHCup is the canonical toolchain installer. It will install the LSP, the compiler, and the build tools. 
+}
+
+\frame{
+	Get it here: \blue{\href{https://get-ghcup.haskell.org}{get-ghcup}}
+}
+
 \subsection{Cabal}
 \frame{
 	Cabal is the Haskell project structure spec (as well as other tools), and cabal-install is the tool we use to build Haskell projects. 
@@ -735,6 +772,10 @@ As mentioned in the beginning of the talk, immutable data structures let us achi
 
 \frame{
 	Haskell: lose your hair \textit{before} you run the program.
+}
+
+\frame{
+	...and then probably after too (it's still programming).
 }
 
 \end{document}
