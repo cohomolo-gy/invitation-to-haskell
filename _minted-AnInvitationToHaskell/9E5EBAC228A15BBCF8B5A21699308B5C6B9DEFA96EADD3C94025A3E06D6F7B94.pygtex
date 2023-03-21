@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{		}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} data Bool = True | False}
+\PYG{+w}{		}\PYG{n}{all}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{Bool}\PYG{p}{]}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{k+kt}{Bool}
+\PYG{+w}{		}\PYG{n}{all}\PYG{+w}{ }\PYG{n}{bs}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{reduce}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k+kt}{True}\PYG{+w}{ }\PYG{n}{bs}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{n}{any}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{Bool}\PYG{p}{]}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{k+kt}{Bool}
+\PYG{+w}{		}\PYG{n}{any}\PYG{+w}{ }\PYG{n}{bs}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{reduce}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{||}\PYG{p}{)}\PYG{+w}{ }\PYG{k+kt}{False}\PYG{+w}{ }\PYG{n}{bs}
+\end{Verbatim}

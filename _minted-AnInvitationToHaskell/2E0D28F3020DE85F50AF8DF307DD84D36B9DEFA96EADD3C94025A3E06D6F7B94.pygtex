@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} data DataType \PYGZlt{}tyvars\PYGZgt{}}
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{}   = Case1}
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{}   | Case2}
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{}   | ...}
+\PYG{+w}{	}\PYG{k+kr}{data}\PYG{+w}{ }\PYG{k+kt}{MyAdt}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{k+kt}{Thing1}\PYG{+w}{ }\PYG{o}{|}\PYG{+w}{ }\PYG{k+kt}{Thing2}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{k+kr}{data}\PYG{+w}{ }\PYG{k+kt}{MyRec}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{k+kt}{MyRecordName}
+\PYG{+w}{	  }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{foo}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{k+kt}{Int}
+\PYG{+w}{	    }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} \PYGZca{} foo :: MyRecordName \PYGZhy{}\PYGZgt{} Int}
+\PYG{+w}{	  }\PYG{p}{,}\PYG{+w}{ }\PYG{n}{bar}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{k+kt}{String}
+\PYG{+w}{	    }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} \PYGZca{} bar :: MyRecordName \PYGZhy{}\PYGZgt{} String}
+\PYG{+w}{	  }\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

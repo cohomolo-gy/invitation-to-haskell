@@ -1,7 +1,6 @@
-In haskell, we write the definition for functions and constants like this:
-
-	\begin{minted}
-		-- the square function
-		f :: Int -> Int
-		f input = input * input
+\begin{center}
+	\begin{minted}{haskell}
+	main :: IO ()
+	main = putStrLn "Hello, World!"
 	\end{minted}
+\end{center}

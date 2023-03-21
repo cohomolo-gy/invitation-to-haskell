@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{n}{reduce}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{a}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{b}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{)}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{b}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{a}\PYG{p}{]}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{b}
+\PYG{+w}{	}\PYG{n}{reduce}\PYG{+w}{ }\PYG{n}{step}\PYG{+w}{ }\PYG{n}{accum}\PYG{+w}{ }\PYG{n}{lst}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{k+kr}{case}\PYG{+w}{ }\PYG{n}{lst}\PYG{+w}{ }\PYG{k+kr}{of}
+\PYG{+w}{	  }\PYG{k+kt}{[]}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{accum}
+\PYG{+w}{	  }\PYG{n}{first}\PYG{k+kt}{:}\PYG{n}{rest}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}
+\PYG{+w}{	    }\PYG{k+kr}{let}\PYG{+w}{ }\PYG{n}{stepped}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{step}\PYG{+w}{ }\PYG{n}{first}\PYG{+w}{ }\PYG{n}{accum}
+\PYG{+w}{	    }\PYG{k+kr}{in}\PYG{+w}{ }\PYG{n}{reduce}\PYG{+w}{ }\PYG{n}{step}\PYG{+w}{ }\PYG{n}{stepped}\PYG{+w}{ }\PYG{n}{rest}
+\end{Verbatim}

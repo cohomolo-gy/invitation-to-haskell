@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{n}{functorFloor}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{k+kt}{Functor}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{o+ow}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{k+kt}{Double}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{k+kt}{Int}
+\PYG{+w}{	}\PYG{n}{functorFloor}\PYG{+w}{ }\PYG{n}{dubs}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{fmap}\PYG{+w}{ }\PYG{n}{floor}\PYG{+w}{ }\PYG{n}{dubs}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} class Show a where show :: a \PYGZhy{}\PYGZgt{} String}
+\PYG{+w}{	}\PYG{n}{stringify}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{Int}\PYG{p}{]}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{String}\PYG{p}{]}
+\PYG{+w}{	}\PYG{n}{stringify}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{fmap}\PYG{+w}{ }\PYG{n}{show}
+\end{Verbatim}

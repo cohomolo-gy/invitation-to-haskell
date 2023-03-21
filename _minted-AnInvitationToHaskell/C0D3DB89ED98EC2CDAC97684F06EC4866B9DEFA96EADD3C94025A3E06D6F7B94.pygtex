@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} instances:}
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Int, \PYGZlt{}\PYGZgt{} = +, \PYGZlt{}\PYGZgt{} = *, etc.}
+\PYG{+w}{	}\PYG{k+kr}{class}\PYG{+w}{ }\PYG{k+kt}{Semigroup}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{k+kr}{where}
+\PYG{+w}{	  }\PYG{p}{(}\PYG{o}{\PYGZlt{}\PYGZgt{}}\PYG{p}{)}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{a}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} instances:}
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Int, unit = 0, unit = 1}
+\PYG{+w}{	}\PYG{k+kr}{class}\PYG{+w}{ }\PYG{k+kt}{Semigroup}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{o+ow}{=\PYGZgt{}}\PYG{+w}{ }\PYG{k+kt}{Monoid}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{k+kr}{where}
+\PYG{+w}{	  }\PYG{n}{unit}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{n}{a}
+\end{Verbatim}

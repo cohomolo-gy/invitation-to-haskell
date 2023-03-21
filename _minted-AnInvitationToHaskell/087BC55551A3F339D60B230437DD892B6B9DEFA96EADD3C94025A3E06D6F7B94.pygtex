@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{k+kr}{class}\PYG{+w}{ }\PYG{k+kt}{Functor}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{f}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{k+kt}{Type}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{k+kt}{Type}\PYG{p}{)}\PYG{+w}{ }\PYG{k+kr}{where}
+\PYG{+w}{	  }\PYG{n}{fmap}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{a}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{)}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{n}{b}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{k+kr}{instance}\PYG{+w}{ }\PYG{k+kt}{Functor}\PYG{+w}{ }\PYG{k+kt}{List}\PYG{+w}{ }\PYG{k+kr}{where}
+\PYG{+w}{	  }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} fmap :: (a \PYGZhy{}\PYGZgt{} b) \PYGZhy{}\PYGZgt{} List a \PYGZhy{}\PYGZgt{} List b}
+\PYG{+w}{	  }\PYG{n}{fmap}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{k+kt}{Nil}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{k+kt}{Nil}
+\PYG{+w}{	  }\PYG{n}{fmap}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{Cons}\PYG{+w}{ }\PYG{n}{h}\PYG{+w}{ }\PYG{n}{t}\PYG{p}{)}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{k+kt}{Cons}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{f}\PYG{+w}{ }\PYG{n}{h}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{fmap}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{n}{h}\PYG{p}{)}
+\end{Verbatim}

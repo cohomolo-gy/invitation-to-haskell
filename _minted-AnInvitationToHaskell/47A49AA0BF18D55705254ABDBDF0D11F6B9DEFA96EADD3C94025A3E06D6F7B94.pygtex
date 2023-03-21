@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} a function}
+\PYG{+w}{	}\PYG{n}{square}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{k+kt}{Int}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{k+kt}{Int}\PYG{+w}{ }\PYG{c+c1}{\PYGZhy{}\PYGZhy{} a type signature}
+\PYG{+w}{	}\PYG{n}{square}\PYG{+w}{ }\PYG{n}{x}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{x}\PYG{+w}{ }\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{x}\PYG{+w}{	}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Constants}
+\PYG{+w}{	}\PYG{n}{pi\PYGZus{}trunc}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{k+kt}{Double}
+\PYG{+w}{	}\PYG{n}{pi\PYGZus{}trunc}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{l+m+mf}{3.14159265359}
+\PYG{+w}{		}
+\PYG{+w}{	}\PYG{n}{charizard}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{k+kt}{Char}
+\PYG{+w}{	}\PYG{n}{charizard}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}c\PYGZsq{}}
+\PYG{+w}{		}
+\PYG{+w}{	}\PYG{n}{stringy}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{k+kt}{String}
+\PYG{+w}{	}\PYG{n}{stringy}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Hi, SEMIBUG!\PYGZdq{}}
+\PYG{+w}{		}
+\end{Verbatim}

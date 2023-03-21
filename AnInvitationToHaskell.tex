@@ -208,7 +208,7 @@ So what is Functional Programming?
 	\end{itemize}
 }
 
-\frame{\newcommand{\haskell}[1]{\begin{minted}{haskell}#1\end{minted}}
+\frame{
 	Famously, Haskell has a type system.
 	
 	\begin{itemize}
@@ -297,26 +297,444 @@ So what is Functional Programming?
 
 \section{Examples}
 
-\subsection{Syntax}
+\subsection{Basics}
 
 \frame{ 
 	In haskell, we write the definition for functions and constants like this:
 }
 
-\begin{frame}[fragile] 
-In haskell, we write the definition for functions and constants like this:
-
-	\begin{minted} 
-		-- the square function
-		f :: Int -> Int 
-		f input = input * input
+\begin{frame}[fragile]
+	In haskell, we write the definition for functions and constants like this:
+	
+	\begin{minted}{haskell}
+		-- a function
+		square :: Int -> Int 
+		square x = x ^ x	
 	\end{minted}
 \end{frame}
-\subsection{Basics}
+
+\begin{frame}[fragile]
+	In haskell, we write the definition for functions and constants like this:
+	
+	\begin{minted}{haskell}
+	-- a function
+	square :: Int -> Int -- a type signature
+	square x = x ^ x	
+	
+	-- Constants
+	pi_trunc :: Double
+	pi_trunc = 3.14159265359
+		
+	charizard :: Char
+	charizard = 'c'
+		
+	stringy :: String
+	stringy = "Hi, SEMIBUG!"
+		
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+	In haskell, we write the definition for functions and constants like this:
+	
+	\begin{minted}{haskell}
+	-- builtin lists
+	oneTwoThree :: [Int]
+	oneTwoThree = [1,2,3]
+	
+	-- builtin tuples
+	ab :: a -> b -> (a,b)
+	ab a b = (a,b) 
+		
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+	One can also define functions of multiple inputs like so: 
+\end{frame}
+
+\begin{frame}[fragile]
+	One can also define functions of multiple inputs like so: 
+	
+	\begin{minted}{haskell}
+	plus :: Int -> Int -> Int 
+	plus x y = x + y
+		
+	-- Int -> Int -> Int is the 
+	-- same as Int -> (Int -> Int)
+	plus' :: Int -> Int -> Int 
+	plus' x = \y -> x + y	
+	\end{minted}
+	
+\end{frame}
+
+\begin{frame}[fragile]
+	Function types are defined syntactically by enclosing parens 
+\end{frame}
+
+\begin{frame}[fragile]
+	Function types are defined syntactically by enclosing parens 
+
+\begin{center}
+	\begin{minted}{haskell}
+	apply :: (a -> b) -> a -> b
+	-- apply = id
+	apply f a = f a
+	
+	compose 
+	  :: (b -> c)
+	  -> (a -> b)
+	  -> (a -> c)
+	compose f g = \a -> f (g a)
+	\end{minted}
+	\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+Defining infix notation is easy as well (not pictured: fixity): 
+
+\begin{center}
+	\begin{minted}{haskell}
+	(^+) :: Int -> Int -> Int
+	(^+) x y = x + y
+	-- usage: x ^+ y
+	\end{minted}
+\end{center}
+\end{frame}
+
+\subsection{Data}
+\begin{frame}[fragile]
+
+We can define data as follows: 
+
+\begin{center}
+	\begin{minted}{haskell}
+	-- data DataType <tyvars>
+	--   = Case1 
+	--   | Case2
+	--   | ...
+	data MyAdt = Thing1 | Thing2 
+	
+	data MyRec = MyRecordName
+	  { foo :: Int 
+	    -- ^ foo :: MyRecordName -> Int
+	  , bar :: String
+	    -- ^ bar :: MyRecordName -> String
+	  }	  	  
+	\end{minted}
+\end{center}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{center}
+	\begin{minted}{haskell}
+	-- data DataType <tyvars>
+	--   = Case1 
+	--   | Case2
+	--   | ...
+	data MyAdt = Thing1 | Thing2 
+	
+	data MyRec = MyRecordName
+	  { foo :: Int 
+	    -- ^ foo :: MyRecordName -> Int
+	  , bar :: String
+	    -- ^ bar :: MyRecordName -> String
+	  }  
+	\end{minted}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+
+Pattern matching is the means by which one destructs sum types.
+\begin{center}
+	\begin{minted}{haskell}
+	let 
+	  x :: MyDataType
+	  x = Case1
+			
+	in case x of 
+	  Case1 -> "hi!"
+	  Case2 -> "Death!"  
+	\end{minted}
+\end{center}
+\end{frame}
+
 \subsection{Folds}
-\subsection{Algorithms}
-\subsection{Concurrency}
+
+\frame{
+As mentioned in the beginning of the talk, immutable data structures let us achieve some remarkable properties. 
+}
+
+\frame{
+	We can write recursive data definitions for things like Lists: 
+	
+}
+
+\begin{frame}[fragile]
+	We can write recursive data definitions for things like Lists: 
+
+\begin{center}
+	\begin{minted}{haskell}
+	data List a = Nil | Cons a (List a)
+	-- builtin: data [a] = [] | (:) a [a]
+	-- usage: Cons 1 (Cons 2 (Cons 3 Nil))
+	-- usage: [1,2,3] := 1:(2:(3:[])) 
+	\end{minted}
+\end{center}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{center}
+	\begin{minted}{haskell}
+	reduce :: (a -> b -> b) -> b -> [a] -> b
+	reduce step accum lst = case lst of 
+	  [] -> accum 
+	  first:rest -> 
+	    let stepped = step first accum
+	    in reduce step stepped rest
+	\end{minted}
+\end{center}
+
+\end{frame}
+
+\frame { 
+	\textit{reduce} is commonly referred to as a "fold". In fact, 
+	it's a \textit{"right fold"} in the sense that the values are accumulated thusly: $reduce (+) 0 [1,2,3] ~ 1 + (2 + (3 + 0))$
+}
+
+\frame { 
+	Claim: this function corresponds with a kind of "canonical way to reduce a list". As a result, one may define many interesting properties of a list in terms of this formulation. 
+}
+
+\begin{frame}[fragile]
+	\begin{center}
+		\begin{minted}{haskell}
+		sum :: [Int] -> Int
+		sum lst = reduce (+) 0 lst 
+		
+		product :: [Int] -> Int
+		product lst = reduce (*) 1 lst
+		
+		filter :: (a -> Bool) -> [a] -> [a]
+		filter p lst = reduce 
+		  (\a acc -> if p a then a:acc else acc) [] lst
+		
+		map :: (a -> b) -> [a] -> [b]
+		map f lst = reduce (\a acc -> (f a):acc) [] lst
+		\end{minted}
+	\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+	\begin{center}
+		\begin{minted}{haskell}
+		-- data Bool = True | False
+		all :: [Bool] -> Bool
+		all bs = reduce (&&) True bs
+		
+		any :: [Bool] -> Bool
+		any bs = reduce (||) False bs
+		\end{minted}
+	\end{center}
+\end{frame}
+
+\frame{
+	Graham Hutton's paper \blue{\href{https://www.cs.nott.ac.uk/~pszgmh/fold.pdf}{A tutorial on the universality and expressiveness of fold}} is a great resource on the subject.
+}
+
+\frame{
+	These are definable in any language for any list. But in haskell, with the right foundation, they're understandable one-liners. 
+}
+
+\frame{
+	Further, we have laziness. This implies a thing called \textit{shortcircuiting}. 
+}
+
+\frame{
+	Typeclasses are a means of layering ad-hoc behaviors. 
+}
+
+\begin{frame}[fragile]
+\begin{center}
+	\begin{minted}{haskell}
+	class Functor (f :: Type -> Type) where 
+	  fmap :: (a -> b) -> f a -> f b
+	  
+	instance Functor List where 
+	  -- fmap :: (a -> b) -> List a -> List b
+	  fmap f Nil = Nil
+	  fmap f (Cons h t) = Cons (f h) (fmap f h)
+	\end{minted}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{center}
+	\begin{minted}{haskell}
+	functorFloor :: Functor f => f Double -> f Int
+	functorFloor dubs = fmap floor dubs
+	
+	-- class Show a where show :: a -> String
+	stringify :: [Int] -> [String]
+	stringify = fmap show
+	\end{minted}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{center}
+	\begin{minted}{haskell}
+	
+	-- instances: 
+	-- Int, <> = +, <> = *, etc.
+	class Semigroup a where 
+	  (<>) :: a -> a -> a
+	  
+	-- instances: 
+	-- Int, unit = 0, unit = 1
+	class Semigroup a => Monoid a where 
+	  unit :: a
+	\end{minted}
+\end{center}
+\end{frame}
+
+
+\section{Building Stuff}
+\subsection{Cabal}
+\frame{
+	Cabal is the Haskell project structure spec (as well as other tools), and cabal-install is the tool we use to build Haskell projects. 
+}
+
+\frame{
+	Useful commands: 
+	
+	\begin{itemize}
+		\item init
+		\item build
+		\item repl
+		\item test
+		\item run
+		\item publish
+	\end{itemize}
+}
+
+\frame{
+	Dependencies are located by default in a community service called "Hackage". Cabal-install knows how to talk to this service. 
+}
+\frame{
+	Pragmatically, Haskell works like any other language: 
+	
+	
+}
+
+\frame{
+	Pragmatically, Haskell works like any other language: 
+
+	\begin{itemize}
+		\item Define a main
+\end{itemize}		
+	
+}
+
+\frame{
+	Pragmatically, Haskell works like any other language: 
+
+\begin{itemize}
+		\item Define a main
+		\item Do stuff in sequence
+\end{itemize}		
+	
+}
+
+\frame{
+	Pragmatically, Haskell works like any other language: 
+
+\begin{itemize}
+		\item Define a main
+		\item Do stuff in sequence
+		\item Exit
+\end{itemize}		
+	
+}
+
+\subsection{IO}
+\frame{
+	Without spending too much on the dreaded "m-word" (it's monad), we have a monad called "IO". 
+}
+
+\frame{
+	IO is a means of sequencing real world state changes.
+}
+
+\frame{
+	In fact, it is "just" a state monad, for the curious reader.
+}
+
+\begin{frame}[fragile]
+\begin{center}
+	\begin{minted}{haskell}
+	main :: IO ()
+	main = putStrLn "Hello, World!"
+	\end{minted}
+\end{center}
+\end{frame}
+
 
 \section{Conclusion}
+
+\frame{
+	We're out of time, but this is a teaser for you. 
+}
+
+\frame{
+	Takeaways: 
+}
+
+\frame{
+	Takeaways: 
+	
+	\begin{itemize}
+		\item Laziness + Purity = Performance + Reasoning
+		
+	\end{itemize}
+}
+
+\frame{
+	Takeaways: 
+	
+	\begin{itemize}
+		\item Laziness + Purity = Performance + Reasoning
+		\item Reasoning + Consistency = Laws
+	\end{itemize}
+}
+
+\frame{
+	Takeaways: 
+	
+	\begin{itemize}
+		\item Laziness + Purity = Performance + Reasoning
+		\item Reasoning + Consistency = Laws
+		\item Laws + Types = Fewer Bugs
+		
+	\end{itemize}
+}
+
+\frame{
+	Takeaways: 
+	
+	\begin{itemize}
+		\item Laziness + Purity = Performance + Reasoning
+		\item Reasoning + Consistency = Laws
+		\item Laws + Types = Fewer Bugs
+		\item Fewer Bugs = Less Stressful Programs
+	\end{itemize}
+}
+
+\frame{
+	Haskell: lose your hair \textit{before} you run the program.
+}
 
 \end{document}
