@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.3.20)  21 MAR 2023 16:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.3.20)  21 MAR 2023 16:26
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1410,10 +1410,6 @@ C94025A3E06D6F7B94.pygtex)) [53
  (./AnInvitationToHaskell.vrb
 \openout5 = `AnInvitationToHaskell.pyg'.
 
-runsystem(pygmentize -l haskell -f latex -P commandprefix=PYG -F tokenmerge -P 
-stripnl=False -o _minted-AnInvitationToHaskell/6CAAAAF2997574AC131FBE2ECE5AE69D
-6B9DEFA96EADD3C94025A3E06D6F7B94.pygtex AnInvitationToHaskell.pyg)...executed.
-
 
 (./_minted-AnInvitationToHaskell/6CAAAAF2997574AC131FBE2ECE5AE69D6B9DEFA96EADD3
 C94025A3E06D6F7B94.pygtex)) [54
@@ -1576,9 +1572,6 @@ C94025A3E06D6F7B94.pygtex)) [85
 \tf@snm=\write10
 \openout10 = `AnInvitationToHaskell.snm'.
 
-runsystem(rm _minted-AnInvitationToHaskell/5FE48629B592CA7ABC1DEB1D7A20B0041936
-502CBFAC5FDB735AC1B28F6A1355.pygtex)...executed.
-
  (./AnInvitationToHaskell.aux)
 Package rerunfilecheck Info: File `AnInvitationToHaskell.out' has not changed.
 (rerunfilecheck)             Checksum: BADE3AF0B856CE81D7B5F97A3A6886FF;1442.
@@ -1586,10 +1579,10 @@ runsystem(rm AnInvitationToHaskell.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 30688 strings out of 478287
- 637117 string characters out of 5849289
+ 30685 strings out of 478287
+ 636839 string characters out of 5849289
  923624 words of memory out of 5000000
- 47917 multiletter control sequences out of 15000+600000
+ 47915 multiletter control sequences out of 15000+600000
  481928 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,122p,504b,577s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1601,7 +1594,7 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msam10.pfb>
-Output written on AnInvitationToHaskell.pdf (94 pages, 173078 bytes).
+Output written on AnInvitationToHaskell.pdf (94 pages, 173085 bytes).
 PDF statistics:
  895 PDF objects out of 1000 (max. 8388607)
  766 compressed objects within 8 object streams
