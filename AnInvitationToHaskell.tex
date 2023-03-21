@@ -182,7 +182,7 @@ So what is Functional Programming?
 }
 
 \frame{
-	This means that functions may not have \textit{side effects}. In conjunction with not allows side effects anywhere, this allows expressions to be completely deterministic, and therefore \textit{referentially transparent}.
+	This means that functions may not have \textit{side effects}. In conjunction with not allowing side effects anywhere, this allows expressions to be completely deterministic, and therefore \textit{referentially transparent}.
 }
 
 \subsection{Types}
@@ -483,7 +483,20 @@ As mentioned in the beginning of the talk, immutable data structures let us achi
 	-- usage: [1,2,3] := 1:(2:(3:[])) 
 	\end{minted}
 \end{center}
+\end{frame}
 
+\begin{frame}[fragile]
+	Noodle baker: why does this work?
+	
+	\begin{center}
+	\begin{minted}{haskell}
+	-- List(a) = 1 + a * List(a)
+	-- List(a) - a*List(a) = 1
+	-- List(a)(1 - a) = 1
+	-- List(a) = 1 / (1 - a)
+	-- List(a) = 1 + a + a^2 + a^3 ...
+	\end{minted}
+	\end{center}
 \end{frame}
 
 \begin{frame}[fragile]

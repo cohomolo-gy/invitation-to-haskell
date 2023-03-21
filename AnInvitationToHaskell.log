@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.3.20)  21 MAR 2023 15:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.3.20)  21 MAR 2023 16:08
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1410,11 +1410,25 @@ C94025A3E06D6F7B94.pygtex)) [53
  (./AnInvitationToHaskell.vrb
 \openout5 = `AnInvitationToHaskell.pyg'.
 
+runsystem(pygmentize -l haskell -f latex -P commandprefix=PYG -F tokenmerge -P 
+stripnl=False -o _minted-AnInvitationToHaskell/6CAAAAF2997574AC131FBE2ECE5AE69D
+6B9DEFA96EADD3C94025A3E06D6F7B94.pygtex AnInvitationToHaskell.pyg)...executed.
 
-(./_minted-AnInvitationToHaskell/D8897858BFE3FE3F31D3E3257B009AAD6B9DEFA96EADD3
+
+(./_minted-AnInvitationToHaskell/6CAAAAF2997574AC131FBE2ECE5AE69D6B9DEFA96EADD3
 C94025A3E06D6F7B94.pygtex)) [54
 
-] [55
+]
+\openout4 = `AnInvitationToHaskell.vrb'.
+
+ (./AnInvitationToHaskell.vrb
+\openout5 = `AnInvitationToHaskell.pyg'.
+
+
+(./_minted-AnInvitationToHaskell/D8897858BFE3FE3F31D3E3257B009AAD6B9DEFA96EADD3
+C94025A3E06D6F7B94.pygtex)) [55
+
+] [56
 
 ]
 \openout4 = `AnInvitationToHaskell.vrb'.
@@ -1424,9 +1438,9 @@ C94025A3E06D6F7B94.pygtex)) [54
 
 
 (./_minted-AnInvitationToHaskell/0BB26A6A2423CBB858CB43559AC9A2B26B9DEFA96EADD3
-C94025A3E06D6F7B94.pygtex)) [56
+C94025A3E06D6F7B94.pygtex)) [57
 
-] [57
+] [58
 
 ]
 \openout4 = `AnInvitationToHaskell.vrb'.
@@ -1436,7 +1450,7 @@ C94025A3E06D6F7B94.pygtex)) [56
 
 
 (./_minted-AnInvitationToHaskell/B5C7F5E8E1F2AFDA4019CF8F3CF398046B9DEFA96EADD3
-C94025A3E06D6F7B94.pygtex)) [58
+C94025A3E06D6F7B94.pygtex)) [59
 
 ]
 \openout4 = `AnInvitationToHaskell.vrb'.
@@ -1446,15 +1460,15 @@ C94025A3E06D6F7B94.pygtex)) [58
 
 
 (./_minted-AnInvitationToHaskell/3086AB84929CA22D5143BC31AF8FD7066B9DEFA96EADD3
-C94025A3E06D6F7B94.pygtex)) [59
-
-] [60
+C94025A3E06D6F7B94.pygtex)) [60
 
 ] [61
 
 ] [62
 
 ] [63
+
+] [64
 
 ]
 \openout4 = `AnInvitationToHaskell.vrb'.
@@ -1465,16 +1479,6 @@ C94025A3E06D6F7B94.pygtex)) [59
 
 
 (./_minted-AnInvitationToHaskell/087BC55551A3F339D60B230437DD892B6B9DEFA96EADD3
-C94025A3E06D6F7B94.pygtex)) [64
-
-]
-\openout4 = `AnInvitationToHaskell.vrb'.
-
- (./AnInvitationToHaskell.vrb
-\openout5 = `AnInvitationToHaskell.pyg'.
-
-
-(./_minted-AnInvitationToHaskell/158315BCE6D7D95C97F29410E1A06C4A6B9DEFA96EADD3
 C94025A3E06D6F7B94.pygtex)) [65
 
 ]
@@ -1484,23 +1488,31 @@ C94025A3E06D6F7B94.pygtex)) [65
 \openout5 = `AnInvitationToHaskell.pyg'.
 
 
-(./_minted-AnInvitationToHaskell/C0D3DB89ED98EC2CDAC97684F06EC4866B9DEFA96EADD3
+(./_minted-AnInvitationToHaskell/158315BCE6D7D95C97F29410E1A06C4A6B9DEFA96EADD3
 C94025A3E06D6F7B94.pygtex)) [66
 
-] (./AnInvitationToHaskell.toc) [67
+]
+\openout4 = `AnInvitationToHaskell.vrb'.
+
+ (./AnInvitationToHaskell.vrb
+\openout5 = `AnInvitationToHaskell.pyg'.
+
+
+(./_minted-AnInvitationToHaskell/C0D3DB89ED98EC2CDAC97684F06EC4866B9DEFA96EADD3
+C94025A3E06D6F7B94.pygtex)) [67
+
+] (./AnInvitationToHaskell.toc) [68
 
 ]
-(./AnInvitationToHaskell.toc) [68
-
-] [69
+(./AnInvitationToHaskell.toc) [69
 
 ] [70
 
 ] [71
 
-] (./AnInvitationToHaskell.toc) [72
+] [72
 
-] [73
+] (./AnInvitationToHaskell.toc) [73
 
 ] [74
 
@@ -1514,14 +1526,16 @@ C94025A3E06D6F7B94.pygtex)) [66
 
 ] [79
 
-] (./AnInvitationToHaskell.toc) [80
+] [80
+
+] (./AnInvitationToHaskell.toc) [81
 
 ]
-[81
-
-] [82
+[82
 
 ] [83
+
+] [84
 
 ]
 \openout4 = `AnInvitationToHaskell.vrb'.
@@ -1531,16 +1545,14 @@ C94025A3E06D6F7B94.pygtex)) [66
 
 
 (./_minted-AnInvitationToHaskell/0CEF96A95DEF406A4414EAD076CEFE0E6B9DEFA96EADD3
-C94025A3E06D6F7B94.pygtex)) [84
+C94025A3E06D6F7B94.pygtex)) [85
 
-] (./AnInvitationToHaskell.toc) [85
+] (./AnInvitationToHaskell.toc) [86
 
-] [86
+] [87
 
 ]
-[87
-
-] [88
+[88
 
 ] [89
 
@@ -1552,6 +1564,8 @@ C94025A3E06D6F7B94.pygtex)) [84
 
 ] [93
 
+] [94
+
 ]
 \tf@nav=\write8
 \openout8 = `AnInvitationToHaskell.nav'.
@@ -1562,17 +1576,20 @@ C94025A3E06D6F7B94.pygtex)) [84
 \tf@snm=\write10
 \openout10 = `AnInvitationToHaskell.snm'.
 
+runsystem(rm _minted-AnInvitationToHaskell/5FE48629B592CA7ABC1DEB1D7A20B0041936
+502CBFAC5FDB735AC1B28F6A1355.pygtex)...executed.
+
  (./AnInvitationToHaskell.aux)
 Package rerunfilecheck Info: File `AnInvitationToHaskell.out' has not changed.
-(rerunfilecheck)             Checksum: E4394FEA6F202FA7F5258E1F37690DA7;1442.
+(rerunfilecheck)             Checksum: BADE3AF0B856CE81D7B5F97A3A6886FF;1442.
 runsystem(rm AnInvitationToHaskell.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 30675 strings out of 478287
- 636211 string characters out of 5849289
- 923551 words of memory out of 5000000
- 47912 multiletter control sequences out of 15000+600000
+ 30688 strings out of 478287
+ 637117 string characters out of 5849289
+ 923624 words of memory out of 5000000
+ 47917 multiletter control sequences out of 15000+600000
  481928 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,122p,504b,577s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1584,10 +1601,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msam10.pfb>
-Output written on AnInvitationToHaskell.pdf (93 pages, 172669 bytes).
+Output written on AnInvitationToHaskell.pdf (94 pages, 173078 bytes).
 PDF statistics:
- 890 PDF objects out of 1000 (max. 8388607)
- 762 compressed objects within 8 object streams
- 202 named destinations out of 1000 (max. 500000)
+ 895 PDF objects out of 1000 (max. 8388607)
+ 766 compressed objects within 8 object streams
+ 204 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} List(a) = 1 + a * List(a)}
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} List(a) \PYGZhy{} a*List(a) = 1}
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} List(a)(1 \PYGZhy{} a) = 1}
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} List(a) = 1 / (1 \PYGZhy{} a)}
+\PYG{+w}{	}\PYG{c+c1}{\PYGZhy{}\PYGZhy{} List(a) = 1 + a + a\PYGZca{}2 + a\PYGZca{}3 ...}
+\end{Verbatim}

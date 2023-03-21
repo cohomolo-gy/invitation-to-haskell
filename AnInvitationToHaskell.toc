@@ -9,8 +9,8 @@
 \beamer@subsectionintoc {3}{1}{Basics}{36}{0}{3}
 \beamer@subsectionintoc {3}{2}{Data}{46}{0}{3}
 \beamer@subsectionintoc {3}{3}{Folds}{50}{0}{3}
-\beamer@sectionintoc {4}{Building Stuff}{67}{0}{4}
-\beamer@subsectionintoc {4}{1}{Ghcup}{68}{0}{4}
-\beamer@subsectionintoc {4}{2}{Cabal}{72}{0}{4}
-\beamer@subsectionintoc {4}{3}{IO}{80}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{85}{0}{5}
+\beamer@sectionintoc {4}{Building Stuff}{68}{0}{4}
+\beamer@subsectionintoc {4}{1}{Ghcup}{69}{0}{4}
+\beamer@subsectionintoc {4}{2}{Cabal}{73}{0}{4}
+\beamer@subsectionintoc {4}{3}{IO}{81}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{86}{0}{5}
